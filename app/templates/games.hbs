@@ -2,17 +2,8 @@
     <h2>Welcome!</h2>
 </div>
 
+{{#each model as |gameUnit|}}
+    {{game-card game=gameUnit}}
+{{/each}}
 {{#each model as |game|}}
-<article>
-    <h3>{{game.title}}</h3>
-    <div>
-        <img src="{{game.image}}" alt="">
-    </div>
-    <div>
-        <span>Genres:</span> {{game.genres}}
-    </div>
-    <div>
-        <span>Platforms:</span> {{#each game.platforms as |platform|}}[{{platform}}]{{/each}}
-    </div>
-</article>
 {{/each}}
