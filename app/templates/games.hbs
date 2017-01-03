@@ -1,9 +1,5 @@
-<div>
-    <h2>Welcome!</h2>
+<div class="games layout-row flex">
+    {{#each model as |gameUnit|}} 
+        {{game-card game=gameUnit}} 
+    {{/each}}
 </div>
-
-{{#each model as |gameUnit|}}
-    {{game-card game=gameUnit}}
-{{/each}}
-{{#each model as |game|}}
-{{/each}}

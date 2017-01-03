@@ -1,14 +1,15 @@
-<div class="game-card layout-row flex-xs flex-gt-xs-50">
+<div class="game-card">
     {{#paper-card as |card|}} 
         {{card.image size="sm" src=game.image alt=game.title title=game.title}} 
-        {{#card.title as |title|}}
-            {{#title.text as |text|}}
-                {{#text.headline}}{{game.title}}{{/text.headline}}
-            {{/title.text}}
-        {{/card.title}}
+        {{#card.header as |header|}}
+            {{#header.text as |text|}}
+                {{#text.title}}{{game.title}}{{/text.title}}
+                {{#text.subhead}}{{game.developers}}{{/text.subhead}}
+            {{/header.text}}
+        {{/card.header}}
         {{#card.actions}}
-            {{#paper-button iconButton=true}}{{paper-icon "done"}}{{/paper-button}}
-            {{#paper-button iconButton=true}}{{paper-icon "delete"}}{{/paper-button}}
+            {{#paper-button onClick=(action "markDone") iconButton=true}}{{paper-icon "done"}}{{/paper-button}}
+            {{#paper-button onClick=(action "remove") iconButton=true}}{{paper-icon "delete"}}{{/paper-button}}
         {{/card.actions}}
     {{/paper-card}}
 </div>

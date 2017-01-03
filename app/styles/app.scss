@@ -1,1 +1,11 @@
 @import 'ember-paper';
+
+.game-card {
+    .md-card-image {
+        height: 250px;
+        width: auto;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
