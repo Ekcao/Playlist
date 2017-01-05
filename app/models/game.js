@@ -6,5 +6,6 @@ export default DS.Model.extend({
     developers: DS.attr('string'),
     genres: DS.attr(),
     image: DS.attr('string'),
-    done: DS.attr('boolean')
+    done: DS.attr('boolean'),
+    userID: DS.attr('string')
 });

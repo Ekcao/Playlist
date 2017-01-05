@@ -1,13 +1,13 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'to-play-list/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | list games');
+moduleForAcceptance('Acceptance | application');
 
-// Goals
-test('should redirect to games route.', function (assert) {
+test('should transition to /games when toolbar app name is clicked.', function (assert) {
     visit('/');
-    andThen(() => {
-        assert.equal(currentURL(), '/games', 'should redirect automatically');
+    click('.app-name-link');
+    andThen(function () {
+        assert.equal(currentURL(), '/games');
     });
 });
 
