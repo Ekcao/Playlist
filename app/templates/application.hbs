@@ -1,5 +1,15 @@
 <div>
     {{app-toolbar}}
+    {{#if firebaseSession.isAuthenticated}}
+        Logged in as {{firebaseSession.currentUser.displayName}}
+        {{#paper-button onClick=(action "signOut")}}
+                Sign out
+        {{/paper-button}}
+    {{else}}
+        {{#paper-button onClick=(action "signIn" "google")}}
+                Sign in with Google
+        {{/paper-button}}
+    {{/if}}
     <div class="body">
         {{outlet}}
     </div>

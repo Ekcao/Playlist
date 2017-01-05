@@ -20,6 +20,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    firebase: {
+        apiKey: 'AIzaSyBNpYukZtt7ZOuj8FEpLTjGu0cxR5bri1o',
+        authDomain: 'toplaylist-a531e.firebaseapp.com',
+        databaseURL: 'https://toplaylist-a531e.firebaseio.com',
+        storageBucket: 'toplaylist-a531e.appspot.com/'
+    },
+
+    torii: {
+        sessionServiceName: 'firebaseSession'
     }
   };
 

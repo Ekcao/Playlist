@@ -5,5 +5,6 @@ export default DS.Model.extend({
     platforms: DS.attr(),
     developers: DS.attr('string'),
     genres: DS.attr(),
-    image: DS.attr('string')
+    image: DS.attr('string'),
+    done: DS.attr('boolean')
 });

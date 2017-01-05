@@ -8,8 +8,12 @@
             {{/header.text}}
         {{/card.header}}
         {{#card.actions}}
-            {{#paper-button onClick=(action "markDone") iconButton=true}}{{paper-icon "done"}}{{/paper-button}}
-            {{#paper-button onClick=(action "remove") iconButton=true}}{{paper-icon "delete"}}{{/paper-button}}
+            {{#paper-button class="btn-mark-done" onClick=(action onMarkDone) iconButton=true}}
+                {{paper-icon "done"}}
+            {{/paper-button}}
+            {{#paper-button class="btn-remove" iconButton=true}}
+                {{paper-icon "delete"}}
+            {{/paper-button}}
         {{/card.actions}}
     {{/paper-card}}
 </div>
