@@ -5,7 +5,6 @@ export default Ember.Controller.extend({
         markDone(game) {
             game.set('done', !game.get('done'));
             game.save();
-            console.log('Marked done');
         }
     }
 });
