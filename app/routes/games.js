@@ -22,8 +22,6 @@ let data = [{
 
 export default Ember.Route.extend({
     model() {
-        var user = this.get('firebaseSession').get('currentUser');
-        console.log(user);
         return data;
     }
 });

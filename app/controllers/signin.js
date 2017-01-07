@@ -2,15 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     actions: {
-        signIn: function (provider) {
+        signIn(provider) {
             let self = this;
-            this.get('firebaseSession').open('firebase', { provider: provider }).then(function (data) {
+            this.get('firebaseSession').open('firebase', { provider: provider }).then(function () {
                 self.transitionToRoute('games');
-                console.log(data);
             });
         },
 
-        signOut: function () {
+        signOut() {
             this.get('firebaseSession').close();
         }
     }
