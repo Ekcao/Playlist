@@ -6,6 +6,10 @@ export default DS.Model.extend({
     developers: DS.attr('string'),
     genres: DS.attr(),
     image: DS.attr('string'),
-    done: DS.attr('boolean'),
-    userID: DS.attr('string')
+    isDone: DS.attr('boolean'),
+    userID: DS.attr('string'),
+
+    toggleDone() {
+        this.set('isDone', !this.get('isDone'));
+    }
 });

@@ -7,12 +7,15 @@ test('should transition to /games when toolbar app name is clicked.', function (
     visit('/');
     click('.app-name-link');
     andThen(function () {
-        assert.equal(currentURL(), '/games');
+        assert.equal(currentURL(), '/games', 'transitioned to /games');
     });
 });
 
 test('should list games to play.', function (assert) {
-
+    visit('/games');
+    andThen(function () {
+        assert.equal(find('.games .game-card').length, 2, 'lists games');
+    });
 });
 
 test('should search games to add to the list.', function (assert) {

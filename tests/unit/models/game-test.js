@@ -5,8 +5,9 @@ moduleForModel('game', 'Unit | Model | game', {
   needs: []
 });
 
-test('it exists', function(assert) {
-  let model = this.subject();
-  // let store = this.store();
-  assert.ok(!!model);
-});
+test('should toggle isDone.', function (assert) {
+    const game = this.subject({ isDone: false });
+
+    Ember.run(() => game.toggleDone());
+    assert.ok(game.get('isDone'), 'isDone is toggled from false to true');
+})
