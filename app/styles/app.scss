@@ -1,7 +1,16 @@
 @import 'ember-paper';
 
+.app-center {
+    width: 66%;
+    margin: 0 auto;
+}
+
 .app-toolbar {
     box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+
+    .app-toolbar-tools {
+        @extend .app-center;
+    }
 }
 
 .game-card {

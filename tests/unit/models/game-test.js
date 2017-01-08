@@ -10,4 +10,4 @@ test('should toggle isDone.', function (assert) {
 
     Ember.run(() => game.toggleDone());
     assert.ok(game.get('isDone'), 'isDone is toggled from false to true');
-})
+});
