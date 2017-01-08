@@ -1,15 +1,27 @@
 @import 'ember-paper';
 
-.app-center {
+@mixin center() {
     width: 66%;
     margin: 0 auto;
 }
 
+@mixin elevate() {
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-color: #E0E0E0;
+}
+
+.app-body {
+    @include center();
+}
+
 .app-toolbar {
-    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+    @include elevate();
 
     .app-toolbar-tools {
-        @extend .app-center;
+        @include center();
     }
 }
 
@@ -18,4 +30,9 @@
         height: 250px;
         width: auto;
     }
+}
+
+.games {
+    @include elevate();
+    margin-top: 32px;
 }

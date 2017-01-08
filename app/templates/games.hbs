@@ -1,5 +1,5 @@
-<div class="games layout-row layout-wrap flex">
+{{#paper-content class="games layout-row layout-wrap flex"}}
     {{#each model as |gameUnit|}}
         {{game-card game=gameUnit markDone=(action "markDone" gameUnit)}}
     {{/each}}
-</div>
+{{/paper-content}}
