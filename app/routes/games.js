@@ -4,7 +4,8 @@ export default Ember.Route.extend({
     giantbomb: Ember.inject.service('giantbomb-ajax'),
 
     model() {
-        this.get('giantbomb').getGame('3030-4725').then();
+        // this.get('giantbomb').searchGameByName('21f1324f123rf')
+        //     .then(data => console.log(data));
         let uid = this.get('firebaseSession').get('currentUser').uid;
         return this.store.query('game', {
             orderBy: 'userID',

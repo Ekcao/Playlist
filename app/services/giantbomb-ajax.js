@@ -15,10 +15,17 @@ export default AjaxService.extend({
         }
     },
 
-    getGame(id) {
+    getGameByID(id) {
         let params = deepCopy(this.get('params'));
         params.data['field_list'] = 'name,image';
-        console.log(params);
         return this.request('/game/' + id + '/', params);
+    },
+
+    searchGameByName(query) {
+        let params = deepCopy(this.get('params'));
+        params.data['field_list'] = 'name,image';
+        params.data['resources'] = 'game';
+        params.data['query'] = query;
+        return this.request('/search/', params);
     }
 });

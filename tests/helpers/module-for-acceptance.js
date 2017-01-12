@@ -7,6 +7,7 @@ import createOfflineRef from '../helpers/create-offline-ref';
 import replaceAppRef from '../helpers/replace-app-ref';
 import stubFirebase from '../helpers/stub-firebase';
 import unstubFirebase from '../helpers/unstub-firebase';
+import { stubValidSession } from '../helpers/firebase-session';
 // Fixture data
 import fixtures from '../helpers/fixtures';
 
@@ -24,6 +25,7 @@ export default function (name, options = {}) {
             }
 
             replaceAppRef(this.application, this.ref);
+            stubValidSession(this.application, { isAuthenticated: true, currentUser: { uid: '123455555555555a' } });
         },
 
         afterEach() {

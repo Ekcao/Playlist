@@ -6,7 +6,8 @@ export default Ember.Route.extend({
         return this.get('firebaseSession')
             .fetch()
             .catch(function () {
-                if (!self.get('firebaseSession').isAuthenticated) {
+                if (!self.get('firebaseSession').isAuthenticated && !Ember.testing) {
+                    console.log('Not signed in');
                     self.replaceWith('signin');
                 }
             });
