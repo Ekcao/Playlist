@@ -10,15 +10,12 @@ test('should mark game as done on markDone action.', function (assert) {
     const ctrl = this.subject();
 
     let stubGame = Ember.Object.create({
-        image: 'fake.png',
-        title: 'test-title',
-        platforms: ['test-platform'],
-        genres: ['test-genres'],
-        done: false,
-        developers: 'test-developer'
+        isDone: false,
+        toggleDone() { this.set('isDone', !this.get('isDone')); },
+        save() {}
     });
 
-    assert.notOk(stubGame.done, 'game is initially not done');
+    assert.notOk(stubGame.isDone, 'game is initially not done');
     ctrl.send('markDone', stubGame);
-    assert.ok(stubGame.done, 'game is now done');
+    assert.ok(stubGame.isDone, 'game is marked done');
 });

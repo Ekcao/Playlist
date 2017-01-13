@@ -7,10 +7,7 @@ export default Ember.Controller.extend({
             this.get('firebaseSession').open('firebase', { provider: provider }).then(function () {
                 self.transitionToRoute('games');
             });
-        },
-
-        signOut() {
-            this.get('firebaseSession').close();
         }
     }
 });
+ 
