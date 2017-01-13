@@ -1,0 +1,14 @@
+{{#paper-autocomplete 
+    noMatchesMessage="No matches found."
+    loadingMessage="Searching games..."
+    placeholder="Search games..."
+    searchField="name"
+    labelPath="name"
+    allowClear=true
+    searchText=searchGameText
+    selected=selectedGame
+    onSearchTextChange=(action (mut searchGameText))
+    onSelectionChange=(action (mut selectedGame))
+    search=(action searchGames) as |gameResult|}}
+    {{gameResult.name}}
+{{/paper-autocomplete}}
