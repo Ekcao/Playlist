@@ -1,4 +1,5 @@
-{{#paper-autocomplete 
+{{#paper-autocomplete
+    class="search-bar-games"
     noMatchesMessage="No matches found."
     loadingMessage="Searching games..."
     placeholder="Search games..."
@@ -10,5 +11,5 @@
     onSearchTextChange=(action (mut searchGameText))
     onSelectionChange=(action (mut selectedGame))
     search=(action searchGames) as |gameResult|}}
-    {{gameResult.name}}
+    {{game-card-small class="game-autocomplete-item" game=gameResult}}
 {{/paper-autocomplete}}

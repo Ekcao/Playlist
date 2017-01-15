@@ -1,15 +1,12 @@
-<div class="app-toolbar">
-    {{#paper-toolbar}}
-        {{#paper-toolbar-tools class="app-toolbar-tools"}}
-            {{#link-to "index" class="app-name-link"}}
-                <h2>ToPlayList</h2>
-            {{/link-to}}
-            <span class="flex"/>
-            {{search-bar-games class="flex" searchGames=(action searchGames)}}
-            {{#paper-button iconButton=true}}
-                {{paper-icon "sort"}}
-            {{/paper-button}}
-            {{overflow-menu signOut=(action signOut)}}
-        {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-</div>
+{{#paper-toolbar class="app-toolbar"}}
+    {{#paper-toolbar-tools class="app-toolbar-tools"}}
+        {{#link-to "index" class="app-name-link"}}
+            <h2>ToPlayList</h2>
+        {{/link-to}}
+        {{search-bar-games class="flex" searchGames=(action searchGames)}}
+        {{#paper-button iconButton=true}}
+            {{paper-icon "sort"}}
+        {{/paper-button}}
+        {{overflow-menu signOut=(action signOut)}}
+    {{/paper-toolbar-tools}}
+{{/paper-toolbar}}

@@ -20,6 +20,10 @@ body {
 .app-toolbar {
     @include elevate();
 
+    .app-name-link {
+        margin-right: 8px;
+    }
+
     .app-toolbar-tools {
         @include center();
     }
@@ -29,6 +33,24 @@ body {
     .md-card-image {
         height: 250px;
         width: auto;
+    }
+}
+
+.md-autocomplete-suggestions li {
+    padding-left: 0px;
+}
+
+.game-autocomplete-item {
+    .game-image {
+        height: 48px;
+        width: auto;
+    }
+
+    .game-name {
+        display: inline;
+        padding-left: 8px;
+        position: relative;
+        top: -20px;
     }
 }
 

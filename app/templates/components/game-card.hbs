@@ -1,19 +1,17 @@
-<div class="game-card">
-    {{#paper-card as |card|}} 
-        {{card.image size="sm" src=game.image alt=game.title title=game.title}} 
-        {{#card.header as |header|}}
-            {{#header.text as |text|}}
-                {{#text.title}}{{game.title}}{{/text.title}}
-                {{#text.subhead}}{{game.developers}}{{/text.subhead}}
-            {{/header.text}}
-        {{/card.header}}
-        {{#card.actions}}
-            {{#paper-button class="btn-mark-done" onClick=(action markDone) iconButton=true}}
-                {{paper-icon "done"}}
-            {{/paper-button}}
-            {{#paper-button class="btn-remove" iconButton=true}}
-                {{paper-icon "delete"}}
-            {{/paper-button}}
-        {{/card.actions}}
-    {{/paper-card}}
-</div>
+{{#paper-card class="game-card" as |card|}} 
+    {{card.image size="sm" src=game.image alt=game.title title=game.title}} 
+    {{#card.header as |header|}}
+        {{#header.text as |text|}}
+            {{#text.title}}{{game.title}}{{/text.title}}
+            {{#text.subhead}}{{game.developers}}{{/text.subhead}}
+        {{/header.text}}
+    {{/card.header}}
+    {{#card.actions}}
+        {{#paper-button class="btn-mark-done" onClick=(action markDone) iconButton=true}}
+            {{paper-icon "done"}}
+        {{/paper-button}}
+        {{#paper-button class="btn-remove" iconButton=true}}
+            {{paper-icon "delete"}}
+        {{/paper-button}}
+    {{/card.actions}}
+{{/paper-card}}
