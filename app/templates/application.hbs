@@ -1,5 +1,5 @@
 <div>
-    {{app-toolbar signOut=(action "signOut") searchGames=(action "searchGames")}}
+    {{app-toolbar signOut=(action "signOut") searchGames=(perform searchGamesTask)}}
     <div class="app-body">
         {{outlet}}
     </div>

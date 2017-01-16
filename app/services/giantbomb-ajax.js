@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import AjaxService from 'ember-ajax/services/ajax';
 import deepCopy from '../util/deep-copy';
 
@@ -23,7 +22,6 @@ export default AjaxService.extend({
 
     searchGameByName(query) {
         let params = deepCopy(this.get('params'));
-        params.data['field_list'] = 'name,image';
         params.data['resources'] = 'game';
         params.data['query'] = query;
         return this.request('/search/', params);
