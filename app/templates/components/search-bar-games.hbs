@@ -9,7 +9,7 @@
     searchText=searchGameText
     selected=selectedGame
     onSearchTextChange=(action (mut searchGameText))
-    onSelectionChange=(action (mut selectedGame))
+    onSelectionChange=(action "showSelectedGame")
     search=searchGames as |gameResult|}}
     {{game-card-small class="game-autocomplete-item" game=gameResult}}
 {{/paper-autocomplete}}

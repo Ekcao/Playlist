@@ -15,5 +15,9 @@ export default Ember.Controller.extend({
             this.get('firebaseSession').close();
             this.transitionToRoute('signin');
         },
+
+        showGame(game) {
+            this.transitionToRoute('game', game.id);
+        }
     }
 });

@@ -1,6 +1,8 @@
 <div>
-    {{app-toolbar signOut=(action "signOut") searchGames=(perform searchGamesTask)}}
-    <div class="app-body">
+    {{app-toolbar signOut=(action "signOut") 
+        searchGames=(perform searchGamesTask)
+        showGame=(action "showGame")}}
+    {{#paper-content class="app-body flex"}}
         {{outlet}}
-    </div>
+    {{/paper-content}}
 </div>

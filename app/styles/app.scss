@@ -15,6 +15,9 @@ body {
 
 .app-body {
     @include center();
+    @include elevate();
+    background-color: white;
+    margin-top: 32px;
 }
 
 .app-toolbar {
@@ -52,9 +55,4 @@ body {
         position: relative;
         top: -20px;
     }
-}
-
-.games {
-    @include elevate();
-    margin-top: 32px;
 }
