@@ -1,4 +1,4 @@
-{{#paper-card class="game-card" as |card|}} 
+{{#paper-card as |card|}} 
     {{card.image size="sm" src=game.image alt=game.title title=game.title}} 
     {{#card.header as |header|}}
         {{#header.text as |text|}}
@@ -7,7 +7,7 @@
         {{/header.text}}
     {{/card.header}}
     {{#card.actions}}
-        {{#paper-button class="btn-mark-done" onClick=(action markDone) iconButton=true}}
+        {{#paper-button class="btn-mark-done" onClick=(action markDone game) iconButton=true}}
             {{paper-icon "done"}}
         {{/paper-button}}
         {{#paper-button class="btn-remove" iconButton=true}}
