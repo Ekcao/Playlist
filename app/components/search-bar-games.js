@@ -7,7 +7,6 @@ export default Ember.Component.extend({
     actions: {
         showSelectedGame(game) {
             this.set('selectedGame', game);
-            console.log(game.id);
             this.get('showGame')(game);
         }
     }
