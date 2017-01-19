@@ -10,6 +10,8 @@ import unstubFirebase from '../helpers/unstub-firebase';
 import { stubValidSession } from '../helpers/firebase-session';
 // Fixture data
 import fixtures from '../helpers/fixtures';
+// Pretender
+import Pretender from 'pretender';
 
 const { RSVP: { Promise } } = Ember;
 
@@ -18,6 +20,7 @@ export default function (name, options = {}) {
         beforeEach() {
             stubFirebase();
             this.application = startApp();
+            this.server = new Pretender();
             this.ref = createOfflineRef(fixtures);
 
             if (options.beforeEach) {
@@ -31,6 +34,7 @@ export default function (name, options = {}) {
         afterEach() {
             let afterEach = options.afterEach && options.afterEach.apply(this, arguments);
             unstubFirebase();
+            this.server.shutdown();
             return Promise.resolve(afterEach).then(() => destroyApp(this.application));
         }
     });

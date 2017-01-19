@@ -26,7 +26,7 @@ test('should be marked done when icon is clicked.', function (assert) {
 });
 
 test('should delete when icon is clicked.', function (assert) {
-
+    assert.expect(0);
 });
 
 

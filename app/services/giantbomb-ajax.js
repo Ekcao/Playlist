@@ -15,7 +15,7 @@ export default AjaxService.extend({
     },
 
     getGameByID(id) {
-        return this.request('/game/' + id + '/', this.get('params'));
+        return this.request('/game/' + id, this.get('params'));
     },
 
     searchGameByName(query) {
