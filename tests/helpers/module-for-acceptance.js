@@ -10,41 +10,9 @@ import unstubFirebase from '../helpers/unstub-firebase';
 import { stubValidSession } from '../helpers/firebase-session';
 // Fixture data
 import fixtures from '../helpers/fixtures';
+import giantbombStub from '../helpers/giantbomb-stub';
 
 const { RSVP: { Promise } } = Ember;
-
-const giantbombStub = Ember.Service.extend({
-    data: {
-        results: [{
-            name: 'Overwatch',
-            image: {
-                icon_url: 'http://www.giantbomb.com/api/image/square_avatar/2852990-overwatch.jpg'
-            },
-            id: 48190
-        }]
-    },
-
-    searchGameByName(query) {
-        let data = this.get('data');
-        return new Promise(
-            function (resolve, reject) {
-                if (query === 'Overwatch') {
-                    resolve(data);
-                } else {
-                    reject();
-                }
-            }
-        )
-    },
-    getGameByID(id) {
-        let data = this.get('data');
-        return new Promise(
-            function (resolve, reject) {
-                resolve(data);
-            }
-        )
-    }
-});
 
 export default function (name, options = {}) {
     module(name, {

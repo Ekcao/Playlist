@@ -1,13 +1,18 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-    title: DS.attr('string'),
+    name: DS.attr('string'),
     platforms: DS.attr(),
-    developers: DS.attr('string'),
+    developers: DS.attr(),
+    publishers: DS.attr(),
     genres: DS.attr(),
-    image: DS.attr('string'),
+    image: DS.attr(),
     isDone: DS.attr('boolean'),
     userID: DS.attr('string'),
+    extID: DS.attr('string'),
+    description: DS.attr('string'),
+    releaseDate: DS.attr('date'),
+    addedDate: DS.attr('date'),
 
     toggleDone() {
         this.set('isDone', !this.get('isDone'));
