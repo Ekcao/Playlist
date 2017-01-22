@@ -30,7 +30,7 @@ export default function (name, options = {}) {
             this.application.register('service:giantbomb-stub', giantbombStub);
             this.application.inject('route', 'giantbomb', 'service:giantbomb-stub');
             this.application.inject('controller', 'giantbomb', 'service:giantbomb-stub');
-            stubValidSession(this.application, { isAuthenticated: true, currentUser: { uid: '123455555555555a' } });
+            stubValidSession(this.application, { isAuthenticated: true, currentUser: { uid: 'DFseHxuzOlVsUC0vItIbiP7KCpp1' } });
         },
 
         afterEach() {

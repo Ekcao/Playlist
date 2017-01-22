@@ -5,8 +5,15 @@
     margin: 0 auto;
 }
 
-@mixin elevate() {
+@mixin raise() {
     box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+@mixin ellipsize() {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 body {
@@ -15,13 +22,13 @@ body {
 
 .app-body {
     @include center();
-    @include elevate();
+    @include raise();
     background-color: white;
     margin-top: 32px;
 }
 
 .app-toolbar {
-    @include elevate();
+    @include raise();
 
     .app-name-link {
         margin-right: 8px;
@@ -32,10 +39,25 @@ body {
     }
 }
 
+.is-done {
+    opacity: 0.5;
+}
+
 .game-card {
+    width: 200px;
+     
+    md-card-header-text {
+        @include ellipsize();
+        padding-bottom: 0px;
+    }
+
+    md-card-actions {
+        margin-top: 0px;
+    }
+
     .md-card-image {
         height: 250px;
-        width: 200px;
+        width: 100%;
     }
 }
 

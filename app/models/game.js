@@ -8,11 +8,11 @@ export default DS.Model.extend({
     genres: DS.attr(),
     image: DS.attr(),
     isDone: DS.attr('boolean'),
-    userID: DS.attr('string'),
     extID: DS.attr('string'),
     description: DS.attr('string'),
     releaseDate: DS.attr('date'),
     addedDate: DS.attr('date'),
+    user: DS.belongsTo('user'),
 
     toggleDone() {
         this.set('isDone', !this.get('isDone'));

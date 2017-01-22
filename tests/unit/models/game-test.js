@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('game', 'Unit | Model | game', {
     // Specify the other units that are required for this test.
-    needs: []
+    needs: ['model:user']
 });
 
 test('should toggle isDone.', function (assert) {
