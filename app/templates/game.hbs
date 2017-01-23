@@ -1,3 +1,8 @@
 {{#paper-button class="btn-add-game" raised=true primary=true onClick=(action "addUserGame") }}
     Add Game
+    {{#if isAdded}}
+        Log
+    {{else}}
+        Not log
+    {{/if}}
 {{/paper-button}}

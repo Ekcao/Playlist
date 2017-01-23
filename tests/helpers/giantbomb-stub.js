@@ -21,7 +21,7 @@ export default Ember.Service.extend({
                     reject();
                 }
             }
-        )
+        );
     },
     getGameByID(id) {
         let data = this.get('data');
@@ -29,6 +29,6 @@ export default Ember.Service.extend({
             function (resolve, reject) {
                 resolve(data);
             }
-        )
+        );
     }
 });

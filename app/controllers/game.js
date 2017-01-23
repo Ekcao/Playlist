@@ -1,30 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+    giantbomb: Ember.inject.service('giantbomb-ajax'),
+
     actions: {
         addUserGame() {
-            let game = this.get('model');
-            let userID = this.get('firebaseSession').get('currentUser').uid;
+            let gameRecord = this.get('giantbomb').createGameFromData(this.get('model'));
             this.store.query('user', {
                 orderBy: 'userID',
-                equalTo: userID
+                equalTo: this.get('firebaseSession').uid
             }).then(results => {
-                let user = results.get('firstObject');
-                let gameRecord = this.store.createRecord('game', {
-                    name: game.name,
-                    platforms: game.platforms,
-                    developers: game.developers,
-                    publishers: game.publishers,
-                    genres: game.genres,
-                    image: game.image,
-                    isDone: false,
-                    extID: game.id,
-                    description: game.description,
-                    releaseDate: new Date(game.original_release_date),
-                    addedDate: new Date()
-                });
-                user.get('games').addObject(gameRecord);
-                gameRecord.save().then(() => user.save());
+                let currentUser = results.get('firstObject');
+                currentUser.get('games').addObject(gameRecord);
+                gameRecord.save().then(() => currentUser.save());
             });
         }
     }

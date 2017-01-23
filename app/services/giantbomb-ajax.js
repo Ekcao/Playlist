@@ -1,7 +1,9 @@
 import AjaxService from 'ember-ajax/services/ajax';
 import deepCopy from '../util/deep-copy';
+import Ember from 'ember';
 
 export default AjaxService.extend({
+    store: Ember.inject.service(),
     host: 'http://www.giantbomb.com',
     namespace: '/api',
     params: {
@@ -24,5 +26,22 @@ export default AjaxService.extend({
         params.data['field_list'] = 'id,name,image';
         params.data['query'] = query;
         return this.request('/search/', params);
+    },
+
+    createGameFromData(data) {
+        let game = this.get('store').createRecord('game', {
+            name: data.name,
+            platforms: data.platforms,
+            developers: data.developers,
+            publishers: data.publishers,
+            genres: data.genres,
+            image: data.image,
+            isDone: false,
+            extID: data.id,
+            description: data.description,
+            releaseDate: new Date(data.original_release_date),
+            addedDate: new Date()
+        });
+        return game;
     }
 });

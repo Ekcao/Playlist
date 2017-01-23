@@ -4,27 +4,28 @@ export default Ember.Controller.extend({
     actions: {
         signIn(provider) {
             let self = this;
-            this.get('firebaseSession').open('firebase', { provider: provider }).then(function (data) {
+            this.get('firebaseSession').open('firebase', { provider: provider }).then(session => {
                 // Query for existing user
-                self.store.query('user', {
+                this.store.query('user', {
                     orderBy: 'userID',
-                    equalTo: data.uid
+                    equalTo: session.uid
                 }).then(results => {
                     // If new user, save as a new user
-                    if (results.get('length') == 0) {
-                        let newUser = self.store.createRecord('user', {
-                            userID: data.uid
+                    if (results.get('length') === 0) {
+                        let newUser = this.store.createRecord('user', {
+                            userID: session.uid
                         });
                         newUser.save();
-                    }
+                    } 
                 });
 
-                self.transitionToRoute('games');
+                this.transitionToRoute('games');
             });
         },
 
         signOut() {
             this.get('firebaseSession').close();
+            this.transitionToRoute('signin');
         }
     }
 });
