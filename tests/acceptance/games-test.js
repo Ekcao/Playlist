@@ -39,6 +39,10 @@ test('should link to detailed game information when suggestion is clicked.', fun
     });
 });
 
+test('should link to detailed game information when game card is clicked.', function (assert) {
+    assert.expect(0);
+});
+
 test('should filter by platform.', function (assert) {
     assert.expect(0);
 });

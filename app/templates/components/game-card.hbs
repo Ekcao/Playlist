@@ -1,8 +1,14 @@
 {{#paper-card as |card|}}
-    {{card.image size="sm" src=game.image.small_url alt=game.name title=game.name}} 
+    {{#link-to "game" game.extID class="link-to-game"}}
+        {{card.image size="sm" src=game.image.small_url alt=game.name title=game.name}}
+    {{/link-to}}
     {{#card.header as |header|}}
         {{#header.text as |text|}}
-            {{#text.title}}{{game.name}}{{/text.title}}
+            {{#text.title}}
+                {{#link-to "game" game.extID class="link-to-game" title=game.name}}
+                    {{game.name}}
+                {{/link-to}}
+            {{/text.title}}
             <div></div>
             {{#text.subhead}}{{game.developers.0.name}}{{/text.subhead}}
         {{/header.text}}
