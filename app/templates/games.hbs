@@ -1,5 +1,5 @@
 <div class="games layout-row layout-wrap">
     {{#each model as |gameUnit|}}
-        {{game-card game=gameUnit markDone=(action "markDone")}}
+        {{game-card class="flex-gt-md-20 flex-gt-sm-33 flex-50" game=gameUnit markDone=(action "markDone")}}
     {{/each}}
 </div>

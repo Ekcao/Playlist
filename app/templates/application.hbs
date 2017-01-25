@@ -2,7 +2,9 @@
     {{app-toolbar signOut=(action "signOut") 
         searchGames=(perform searchGamesTask)
         showGame=(action "showGame")}}
-    {{#paper-content class="app-body flex"}}
-        {{outlet}}
-    {{/paper-content}}
+    <div class="layout-row layout-align-center">
+        {{#paper-content class="app-body flex-gt-sm-60"}}
+            {{outlet}}
+        {{/paper-content}}
+    </div>
 </div>

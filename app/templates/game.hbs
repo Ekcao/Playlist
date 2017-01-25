@@ -1,21 +1,19 @@
 <div class="game-content">
     <div class="game-details layout-row">
-        <img class="game-image flex-33" src={{model.image.small_url}} alt={{model.name}} title={{model.name}}>
+        <img class="game-image flex-25" src={{model.image.small_url}} alt={{model.name}} title={{model.name}}>
         <div class="game-info flex">
             <h1>{{model.name}}</h1>
             {{model.developers.0.name}}
+            {{#paper-button class="btn-add-game" 
+                raised=true
+                primary=true
+                onClick=(action "addUserGame")}}
+                Add Game
+            {{/paper-button}}
         </div>
-        {{#paper-button class="btn-add-game" 
-            raised=true
-            primary=true
-            onClick=(action "addUserGame")}}
-            Add Game
-        {{/paper-button}}
     </div>
 
     <div class="game-description">
         {{{model.deck}}}
     </div>
 </div>
-
-

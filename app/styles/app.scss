@@ -1,10 +1,5 @@
 @import 'ember-paper';
 
-@mixin center() {
-    width: 66%;
-    margin: 0 auto;
-}
-
 @mixin raise() {
     box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
 }
@@ -21,7 +16,6 @@ body {
 }
 
 .app-body {
-    @include center();
     @include raise();
     background-color: white;
     margin-top: 32px;
@@ -35,7 +29,6 @@ body {
     }
 
     .app-toolbar-tools {
-        @include center();
     }
 }
 
@@ -44,7 +37,6 @@ body {
 }
 
 .game-card {
-    width: 200px;
 
     .link-to-game {
         color: black;
@@ -93,13 +85,12 @@ body {
     .game-details {
         height: 325px;
         width: 100%;
-        position: relative;
     }
 
     .btn-add-game {
         position: absolute;
-        bottom: 0;
-        right: 0;
+        bottom: 16px;
+        right: 16px;
     }
 
     .game-image {
@@ -114,7 +105,7 @@ body {
     }
 
     .game-info {
-        vertical-align: top;
+        position: relative;
         padding: 0 16px 16px;
     }
 }
