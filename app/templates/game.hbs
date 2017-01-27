@@ -1,12 +1,26 @@
 <div class="game-content">
     <div class="game-details layout-row">
-        <img class="game-image flex-25" src={{model.image.small_url}} alt={{model.name}} title={{model.name}}>
+        <img class="game-image flex-40 flex-gt-md-25" src={{model.image.small_url}} alt={{model.name}} title={{model.name}}>
         <div class="game-info flex">
-            <h1>{{model.name}}</h1>
-            {{model.developers.0.name}}
+            <h1 class="game-name">{{model.name}}</h1>
+            <span class="game-developer">{{model.developers.0.name}}</span>
+            <span class="game-release-date">{{moment-format model.original_release_date 'MMMM DD, YYYY'}}</span>
+            <p>
+                {{#each model.publishers as |publisher|}}
+                    {{publisher.name}} 
+                {{/each}}
+            </p>
+            
+            {{#paper-chips
+                readOnly=true
+                content=model.platforms as |platform|}}
+                {{platform.name}}
+            {{/paper-chips}}
+
             {{#paper-button class="btn-add-game" 
                 raised=true
                 primary=true
+                disabled=(await isAdded)
                 onClick=(action "addUserGame")}}
                 Add Game
             {{/paper-button}}

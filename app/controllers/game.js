@@ -1,7 +1,25 @@
 import Ember from 'ember';
+import { task } from 'ember-concurrency';
+
 
 export default Ember.Controller.extend({
     giantbomb: Ember.inject.service('giantbomb-ajax'),
+
+    isAdded: Ember.computed(function () {
+        return this.get('gameIsAddedTask').perform();
+    }),
+
+    gameIsAddedTask: task(function* () {
+        return yield this.store.query('game', {
+            orderBy: 'user',
+            equalTo: this.get('firebaseSession').uid
+        }).then((results) => {
+            let isAdded = results.toArray().find((game) => {
+                return game.data.extID == this.get('model').id;
+            });
+            return typeof isAdded !== 'undefined';
+        }).catch((error) => console.log(error));
+    }),
 
     actions: {
         addUserGame() {

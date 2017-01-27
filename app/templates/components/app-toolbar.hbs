@@ -1,12 +1,9 @@
-{{#paper-toolbar}}
-    {{#paper-toolbar-tools class="app-toolbar-tools"}}
+{{#paper-toolbar class="layout-row layout-align-center"}}
+    {{#paper-toolbar-tools class="app-toolbar-tools flex-gt-sm-60"}}
         {{#link-to "index" class="app-name-link"}}
             <h2>ToPlayList</h2>
         {{/link-to}}
         {{search-bar-games class="flex" searchGames=(action searchGames) showGame=(action showGame)}}
-        {{#paper-button iconButton=true}}
-            {{paper-icon "sort"}}
-        {{/paper-button}}
         {{overflow-menu signOut=(action signOut)}}
     {{/paper-toolbar-tools}}
 {{/paper-toolbar}}
