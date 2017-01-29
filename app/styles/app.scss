@@ -11,18 +11,28 @@
     text-overflow: ellipsis;
 }
 
-body {
+.app-container {
+    height: 100%;
     background-color: #E0E0E0;
+    z-index: 1;
+}
+
+.app-sidenav {
+    @include raise();
+    z-index: 2;
 }
 
 .app-body {
     @include raise();
     background-color: white;
     margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 .app-toolbar {
     @include raise();
+    position: relative;
+    z-index: 3;
 
     .app-name-link {
         margin-right: 8px;
