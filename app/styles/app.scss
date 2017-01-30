@@ -15,9 +15,18 @@ body > div.ember-view {
     height: 100%;
 }
 
+body {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .app-container {
-    height: 100%;
     background-color: #E0E0E0;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .app-sidenav {
@@ -30,15 +39,14 @@ body > div.ember-view {
 
     .md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
         margin-left: 0;
-        margin-right: 24px;
+        margin-right: 16px;
     }
 }
 
 .app-body {
     @include raise();
-    background-color: white;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    overflow: auto;
+    background-color: #E0E0E0;
 }
 
 .app-toolbar {

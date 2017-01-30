@@ -1,7 +1,7 @@
 {{app-toolbar signOut=(action "signOut") 
     searchGames=(perform searchGamesTask)
     showGame=(action "showGame")}}
-{{#paper-sidenav-container class="app-container layout-row layout-align-space-between"}}
+{{#paper-sidenav-container class="app-container"}}
     {{#paper-sidenav 
         class="app-sidenav flex-gt-sm-15"
         open=sidenavOpen
@@ -20,9 +20,7 @@
         {{/paper-list}}
     {{/paper-sidenav}}
 
-    {{#paper-content class="app-body flex-gt-sm-65"}}
+    {{#paper-content flex=true scroll-y=true class="app-body flex"}}
         {{outlet}}
     {{/paper-content}}
-
-    <div class="flex-gt-sm-15"></div>
 {{/paper-sidenav-container}}

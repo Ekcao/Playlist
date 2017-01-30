@@ -18,7 +18,6 @@ export default Ember.Controller.extend({
             let isAdded = results.toArray().find((game) => {
                 return game.data.extID == this.get('model').id;
             });
-            console.log(isAdded);
             return typeof isAdded !== 'undefined';
         }).catch((error) => console.log(error));
     }),

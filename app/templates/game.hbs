@@ -1,4 +1,4 @@
-<div class="game-content">
+<div class="game-content layout-padding">
     <div class="game-details layout-row">
         <img class="game-image flex-40 flex-gt-md-25" src={{model.image.medium_url}} alt={{model.name}} title={{model.name}}>
         <div class="game-info flex">
@@ -22,7 +22,6 @@
                 primary=true
                 disabled=(await isAdded)
                 onClick=(action "addUserGame")}}
-                {{log (await isAdded)}}
                 Add Game
             {{/paper-button}}
         </div>
