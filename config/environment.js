@@ -54,6 +54,7 @@ module.exports = function (environment) {
     }
 
     if (environment === 'production') {
+        ENV.rootURL = '/Playlist';
         ENV.locationType = 'hash';
     }
 
