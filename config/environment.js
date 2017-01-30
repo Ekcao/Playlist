@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
     var ENV = {
-        modulePrefix: 'to-play-list',
+        modulePrefix: 'Playlist',
         environment: environment,
         rootURL: '/',
         locationType: 'auto',
