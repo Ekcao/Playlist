@@ -3,6 +3,7 @@ import { task, timeout } from 'ember-concurrency';
 
 export default Ember.Controller.extend({
     giantbomb: Ember.inject.service('giantbomb-ajax'),
+    sidenavOpen: false,
 
     searchGamesTask: task(function* (query) {
         yield timeout(500);

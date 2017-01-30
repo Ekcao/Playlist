@@ -1,5 +1,10 @@
 {{#paper-toolbar class="layout-row layout-align-center"}}
     {{#paper-toolbar-tools class="app-toolbar-tools flex-gt-sm-65"}}
+        {{#paper-sidenav-toggle name="sidenav" as |toggleAction|}}
+            {{#paper-button class="hide-gt-sm" iconButton=true onClick=(action toggleAction)}}
+                {{paper-icon "menu"}}
+            {{/paper-button}}
+        {{/paper-sidenav-toggle}}
         {{#link-to "index" class="app-name-link"}}
             <h2>PlayList</h2>
         {{/link-to}}

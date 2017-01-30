@@ -2,10 +2,22 @@
     searchGames=(perform searchGamesTask)
     showGame=(action "showGame")}}
 {{#paper-sidenav-container class="app-container layout-row layout-align-space-between"}}
-    {{#paper-sidenav name="sidenav" class="app-sidenav flex-gt-sm-15"}}
-        {{#paper-content padding=true}}
-            All Games
-        {{/paper-content}}
+    {{#paper-sidenav 
+        class="app-sidenav flex-gt-sm-15"
+        open=sidenavOpen
+        onToggle=(action (mut sidenavOpen))
+        name="sidenav"}}
+        {{#paper-list class="app-sidenav-menu-item"}}
+            {{#link-to "games" (query-params isDone=null)}}
+                {{#paper-item}}{{paper-icon "play arrow"}} All Games{{/paper-item}}
+            {{/link-to}}
+            {{#link-to "games" (query-params isDone=false)}}
+                {{#paper-item}}{{paper-icon "watch later"}} Remaining{{/paper-item}}
+            {{/link-to}}
+            {{#link-to "games" (query-params isDone=true)}}
+                {{#paper-item}}{{paper-icon "done"}} Done{{/paper-item}}
+            {{/link-to}}
+        {{/paper-list}}
     {{/paper-sidenav}}
 
     {{#paper-content class="app-body flex-gt-sm-65"}}

@@ -4,8 +4,9 @@ import { task } from 'ember-concurrency';
 
 export default Ember.Controller.extend({
     giantbomb: Ember.inject.service('giantbomb-ajax'),
+    modelID: null,
 
-    isAdded: Ember.computed(function () {
+    isAdded: Ember.computed('modelID', function () {
         return this.get('gameIsAddedTask').perform();
     }),
 
@@ -17,6 +18,7 @@ export default Ember.Controller.extend({
             let isAdded = results.toArray().find((game) => {
                 return game.data.extID == this.get('model').id;
             });
+            console.log(isAdded);
             return typeof isAdded !== 'undefined';
         }).catch((error) => console.log(error));
     }),
