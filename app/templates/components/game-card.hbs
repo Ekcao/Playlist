@@ -17,7 +17,7 @@
         {{#paper-button class="btn-mark-done" onClick=(action markDone game) iconButton=true}}
             {{paper-icon "done"}}
         {{/paper-button}}
-        {{#paper-button class="btn-remove" iconButton=true}}
+        {{#paper-button class="btn-remove" onClick=(action remove game) iconButton=true}}
             {{paper-icon "delete"}}
         {{/paper-button}}
     {{/card.actions}}

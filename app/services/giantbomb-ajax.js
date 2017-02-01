@@ -4,7 +4,7 @@ import Ember from 'ember';
 
 export default AjaxService.extend({
     store: Ember.inject.service(),
-    host: 'http://www.giantbomb.com',
+    host: 'https://www.giantbomb.com',
     namespace: '/api',
     params: {
         dataType: 'jsonp',

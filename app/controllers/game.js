@@ -32,6 +32,7 @@ export default Ember.Controller.extend({
                 let currentUser = results.get('firstObject');
                 currentUser.get('games').addObject(gameRecord);
                 gameRecord.save().then(() => currentUser.save());
+                this.set('isAdded', true);
             });
         }
     }

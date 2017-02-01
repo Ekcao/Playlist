@@ -21,16 +21,20 @@ body {
 }
 
 .app-container {
-    background-color: #E0E0E0;
     position: absolute;
     top: 64px;
     right: 0;
     bottom: 0;
     left: 0;
+
+    md-content {
+        background-color: #E0E0E0;
+    }
 }
 
 .app-sidenav {
     @include raise();
+    z-index: 1;
 
     .app-sidenav-menu-item > a {
         color: black;
@@ -43,6 +47,10 @@ body {
     }
 }
 
+.app-sidenav:not(.md-locked-open) {
+    z-index: 60;
+}
+
 .app-body {
     @include raise();
     overflow: auto;
@@ -52,6 +60,7 @@ body {
 .app-toolbar {
     @include raise();
     position: relative;
+    z-index: 2;
 
     .app-name-link {
         margin-right: 8px;
@@ -66,6 +75,7 @@ body {
 }
 
 .game-card {
+
     .link-to-game {
         color: black;
         text-decoration: none;
@@ -73,6 +83,10 @@ body {
 
     .link-to-game:hover {
         text-decoration: underline;
+    }
+
+    md-card-header {
+        padding-bottom: 0px;
     }
      
     md-card-header-text {
@@ -85,7 +99,7 @@ body {
     }
 
     .md-card-image {
-        height: 250px;
+        height: 200px;
         width: 100%;
     }
 }

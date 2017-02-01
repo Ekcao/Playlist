@@ -9,6 +9,11 @@ export default Ember.Controller.extend({
             game.toggleDone();
             game.save();
             this.notifyPropertyChange('isDone');
+        },
+
+        remove(game) {
+            let self = this;
+            game.destroyRecord();
         }
     },
 
@@ -20,7 +25,7 @@ export default Ember.Controller.extend({
             isDone = isDone == "true";
             return games.filterBy('isDone', isDone);
         } else {
-            return games;
+            return null;
         }
     })
 });
