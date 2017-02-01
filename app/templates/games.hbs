@@ -1,5 +1,8 @@
 <div class="games layout-row layout-wrap layout-padding">
-    {{#each (if filteredGames filteredGames model) as |gameUnit|}}
-        {{game-card class="flex-gt-lg-15 flex-gt-md-20 flex-gt-xs-33 flex-50" game=gameUnit markDone=(action "markDone") remove=(action "remove")}}
+    {{#each (if (is-array filteredGames) filteredGames model) as |gameUnit|}}
+        {{game-card 
+            class="flex-gt-lg-15 flex-gt-md-20 flex-gt-xs-33 flex-50" 
+            game=gameUnit markDone=(action "markDone") 
+            remove=(action "remove")}}
     {{/each}}
 </div>
