@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
     gameIsAddedTask: task(function* () {
         return yield this.store.query('game', {
             orderBy: 'user',
-            equalTo: this.get('firebaseSession').uid
+            equalTo: this.get('firebaseSession.currentUser').uid
         }).then((results) => {
             let isAdded = results.toArray().find((game) => {
                 return game.data.extID == this.get('model').id;
@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
             let gameRecord = this.get('giantbomb').createGameFromData(this.get('model'));
             this.store.query('user', {
                 orderBy: 'userID',
-                equalTo: this.get('firebaseSession').uid
+                equalTo: this.get('firebaseSession.currentUser').uid
             }).then(results => {
                 let currentUser = results.get('firstObject');
                 currentUser.get('games').addObject(gameRecord);
